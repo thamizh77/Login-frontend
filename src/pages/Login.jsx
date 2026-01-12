@@ -6,6 +6,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -15,7 +17,7 @@ export default function Login() {
     }
 
     try {
-      const res = await axios.post("http://127.0.0.1:5001/login", {
+      const res = await axios.post(`${API_URL}/login`, {
         email,
         password,
       });
@@ -34,10 +36,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center">
-      <form
-        onSubmit={handleLogin}
-        className="bg-zinc-900 p-8 w-96 rounded"
-      >
+      <form onSubmit={handleLogin} className="bg-zinc-900 p-8 w-96 rounded">
         <h1 className="text-white text-2xl mb-6">Sign In</h1>
 
         {error && <p className="text-red-500 mb-3">{error}</p>}
@@ -45,14 +44,14 @@ export default function Login() {
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-3 mb-4 bg-zinc-800 text-white rounded focus:outline-none"
+          className="w-full p-3 mb-4 bg-zinc-800 text-white rounded"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-3 mb-4 bg-zinc-800 text-white rounded focus:outline-none"
+          className="w-full p-3 mb-4 bg-zinc-800 text-white rounded"
           onChange={(e) => setPassword(e.target.value)}
         />
 
