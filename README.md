@@ -1,16 +1,60 @@
-# React + Vite
+# Netflix Login Page – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+This is the frontend part of a Netflix-style login page built using React.
+The UI is designed similar to the Netflix login screen with email and password fields.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Objective
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+To create a clean and simple login page UI and handle basic frontend validation and redirection.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+* React (Vite)
+* Tailwind CSS
+* Axios
+
+---
+
+## Features
+
+* Netflix-inspired login UI
+* Email and password input fields
+* Frontend validation for empty fields
+* Error message display for invalid login
+* Redirect to dashboard page on successful login
+
+---
+
+## How to Run the Project
+
+```bash
+npm install
+npm run dev
+```
+
+The application will run on:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Output
+
+* Login page with email and password fields
+* Error message for wrong credentials
+* Dashboard page after successful login
+
+---
+
+## Note
+
+This repository contains only the frontend code.
+Backend authentication is handled using a separate Node.js and Express backend.
