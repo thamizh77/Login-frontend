@@ -11,11 +11,6 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      setError("Email and Password required");
-      return;
-    }
-
     try {
       const res = await axios.post(`${API_URL}/login`, {
         email,
@@ -26,11 +21,7 @@ export default function Login() {
         window.location.href = "/dashboard";
       }
     } catch (err) {
-      if (err.response) {
-        setError(err.response.data.message);
-      } else {
-        setError("Server not running. Try again later.");
-      }
+      setError("Invalid credentials or server error");
     }
   };
 
